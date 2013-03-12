@@ -14,7 +14,7 @@ define bind::hostentry (
   $fqdn,
   $ip_address,
   $zone,
-  $provider,
+  $provider
 ) {
   
   $reverse_ip_address = inline_template('<%= ipaddress.split(".").reverse.join(".") %>')
