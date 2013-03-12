@@ -1,9 +1,9 @@
 options {
     listen-on port 53 { any; };
-    directory "/var/named/chroot/var/named";
-    dump-file "/var/named/chroot/var/data/cache_dump.db";
-    statistics-file "/var/named/chroot/var/named/data/named_stats.txt";
-    memstatistics-file "/var/named/chroot/var/named/data/named_mem_stats.txt";
+    directory "/var/named";
+    dump-file "/var/data/cache_dump.db";
+    statistics-file "/var/named/data/named_stats.txt";
+    memstatistics-file "/var/named/data/named_mem_stats.txt";
     allow-query { any; };
     recursion yes;
 
