@@ -45,7 +45,7 @@ class bind (
     group   => named,
     mode    => 0640,
     path    => "/etc/named.conf",
-    content => template("puppet:///modules/bind/named.conf.erb"),
+    content => template('puppet:///modules/bind/named.conf.erb'),
     require => Package[$bind_package],
   }
 
