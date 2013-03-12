@@ -13,9 +13,9 @@
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "files/placeholder": "d41d8cd98f00b204e9800998ecf8427e",
     "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
-    "manifests/hostentry.pp": "81e404f153b30518563f9756025122c2",
+    "manifests/hostentry.pp": "0db46e70658c5c03373cb49a1ddc51e6",
     "manifests/init.pp": "4d11958f5945361b8c2a6bd740867922",
-    "templates/hostentry.erb": "8d435d9bf526d71b150e5c8df98e4323",
+    "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",
     "templates/named.conf.erb": "c88494e7610d7467f4832a532443f165",
     "templates/reverseentry.erb": "8cadac4bd5006b2e2129de007089ffde",
     "templates/soa.erb": "415443eb2d91bf35976c8b721da56892"

@@ -17,7 +17,7 @@ define bind::hostentry (
   $provider
 ) {
   
-  $reverse_ip_address = inline_template('<%= ipaddress.split(".").reverse.join(".") %>')
+  $reverse_ip_address = inline_template('<%= ip_address.split(".").reverse.join(".") %>')
   
   concat::fragment { "${host_name}.${zone}.${provider}.${domain_name}":
     order   => 90,
