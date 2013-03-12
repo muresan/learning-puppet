@@ -11,10 +11,13 @@
     "Modulefile": "391cb36701744ffe9a101e246f72f7ba",
     "README.markdown": "d3f38583286ca05f1fb1e7f37c613d23",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
-    "manifests/init.pp": "7d3b7274a9f25701711ca9d291d60654",
-    "manifests/site.pp": "158ab7c6ecaeb913e5fa9e534c8a87e1",
-    "templates/domain.hosts.erb": "4d8081931180c15059aa672947775fe9",
-    "templates/named.conf.erb": "00e4933d88cdce2ed46cf72a2d6ac82a"
+    "files/placeholder": "d41d8cd98f00b204e9800998ecf8427e",
+    "manifests/hostentry.pp": "a0ef2db580dc038433c40a5adc5d7112",
+    "manifests/init.pp": "20b4d777106e45bcb9462cc62a413584",
+    "templates/hostentry.erb": "e87e28b8400f14c089d3c209c53668fe",
+    "templates/named.conf.erb": "00e4933d88cdce2ed46cf72a2d6ac82a",
+    "templates/reverseentry.erb": "810b00bda94cb59026cc506117953b3b",
+    "templates/soa.erb": "ad322cb32635bb2b234026e61fead559"
   },
   "dependencies": []
 }

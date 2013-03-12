@@ -13,6 +13,7 @@
 class bind (
   $version    = "installed",
   $start_bind = true,
+  $chroot     = true,
 ) {
   
   $utime_serial = inline_template("<%= Time.now.to_i %>")
@@ -21,7 +22,8 @@ class bind (
       "RedHat" => 'bind',
       "Ubuntu" => 'bind9',
       default =>  'bind',
-    }  
+    }
+  
   
   package { $bind_package: 
     ensure  => $version,
@@ -44,7 +46,7 @@ class bind (
   }
 
   class dns::host {
-    @@host_entry { "${::fqdn}":
+    @@hostentry { "${::fqdn}":
       host_name   => $::hostname,
       domain_name => $::domainname,
       fqdn        => $::fqdn,
@@ -52,7 +54,7 @@ class bind (
     }
 
     class dns::ips {
-      Host_entry <<| |>> {
+      Hostentry <<| |>> {
         notify => Service["named"]
       }
     }
