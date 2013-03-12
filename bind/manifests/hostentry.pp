@@ -23,14 +23,14 @@ define bind::hostentry (
   
   concat::fragment { "${host_name}.${zone}.${provider}.${domain_name}":
     order   => 20,
-    target  => "${chroot}/var/named/${domain}",
+    target  => "${chroot}/var/named/${domain_name}",
     content => template('bind/hostentry.erb'),
   }
   
-  ## added both entries at the same time in $domain zone
-  #concat::fragment { "${host_name}.servers.${domain}":
+  ## added both entries at the same time in $domain_name zone
+  #concat::fragment { "${host_name}.servers.${domain_name}":
   #  order   => 20,
-  #  target  => "${chroot}/var/named/servers.${domain}",
+  #  target  => "${chroot}/var/named/servers.${domain_name}",
   #  content => template('puppet:///modules/bind/hostentry.erb'),
   #}
   
