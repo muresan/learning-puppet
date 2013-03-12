@@ -13,7 +13,6 @@ define bind::hostentry (
   $domain_name,
   $fqdn,
   $ip_address,
-  $order  = 20,
   $zone,
   $provider,
   $chroot = '/var/named/chroot'
@@ -22,7 +21,7 @@ define bind::hostentry (
   $reverse_ip_address = inline_template('<%= ipaddress.split(".").reverse.join(".") %>')
   
   concat::fragment { "${host_name}.${zone}.${provider}.${domain_name}":
-    order   => $order,
+    order   => 20,
     target  => "${chroot}/var/named/${domain_name}",
     content => template('bind/hostentry.erb'),
   }
@@ -35,7 +34,7 @@ define bind::hostentry (
   #}
   
   concat::fragment { "${host_name}.10.in-addr.arpa":
-    order   => $order,
+    order   => 20,
     target  => "${chroot}/var/named/10.in-addr.arpa",
     content => template('bind/reverseentry.erb'),
   }

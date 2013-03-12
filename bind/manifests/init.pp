@@ -85,16 +85,16 @@ class bind (
     content => ";; This file managed by Puppet\n",
   }
 
-  concat::fragment { "origin.10.in-addr.arpa":
+    concat::fragment { "soa.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
     order   => 9,
-    content => "\$ORIGIN in-addr.arpa.\n",
+    content => template('bind/soa.erb'),
   }
 
-  concat::fragment { "soa.10.in-addr.arpa":
+  concat::fragment { "origin.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
     order   => 10,
-    content => template('bind/soa.erb'),
+    content => "\$ORIGIN in-addr.arpa.\n",
   }
 
   Bind::Hostentry <<| |>>
