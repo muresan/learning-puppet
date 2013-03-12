@@ -10,38 +10,28 @@
 #
 # Sample Usage:
 #
-class bind (
-  $version    = "installed",
-  $start_bind = true,
-  $chroot     = "/var/named/chroot",
-  $domain     = "tinyco.com",
-) {
-  
+class bind ($version = "installed", $start_bind = true, $chroot = "/var/named/chroot", $domain = "tinyco.com",) {
   $utime_serial = inline_template("<%= Time.now.to_i %>")
 
   $bind_package = $::operatingsystem ? {
     "CentOS" => 'bind',
     "RedHat" => 'bind',
     "Ubuntu" => 'bind9',
-    default =>  'bind',
+    default  => 'bind',
   }
 
   $bind_service = $::operatingsystem ? {
     "CentOS" => 'named',
     "RedHat" => 'named',
     "Ubuntu" => 'bind9',
-    default =>  'named',
+    default  => 'named',
   }
-  
-  package { $bind_package: 
-    ensure  => $version,
-  }
-  
+
+  package { $bind_package: ensure => $version, }
+
   service { $bind_service:
     ensure    => running,
-    subscribe => [
-      File["named.conf"],Concat["${chroot}/var/named/${domain}","${chroot}/var/named/10.in-addr.arpa"],
-    ],
+    subscribe => [File["named.conf"], Concat["${chroot}/var/named/${domain}", "${chroot}/var/named/10.in-addr.arpa"],],
     require   => Package[$bind_package],
   }
 
@@ -53,34 +43,34 @@ class bind (
     content => template("named/named.conf.erb"),
     require => Package[$bind_package],
   }
-  
+
   concat::fragment { "header.${domain}":
     target  => "${chroot}/var/named/${domain}",
     order   => '01',
     content => ";; This file managed by Puppet\n",
   }
-  
+
   concat::fragment { "soa.${domain}":
     target  => "${chroot}/var/named/${domain}",
     order   => '10',
     content => template('puppet:///modules/bind/templates/soa.erb'),
   }
-  
+
   concat::fragment { "header.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
     order   => '01',
     content => ";; This file managed by Puppet\n",
   }
-  
+
   concat::fragment { "soa.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
     order   => '10',
     content => template('puppet:///modules/bind/templates/soa.erb'),
   }
-  
+
   Bind::Hostentry <<| |>>
 
-  #file { "$domain":
+  # file { "$domain":
   #  owner   => root,
   #  group   => named,
   #  mode    => 0640,
@@ -88,8 +78,8 @@ class bind (
   #  content => template("puppet:///modules/bind/hostentry.erb"),
   #  require => Package[$bind_package],
   #}
-  
-  #file { "10.in-addr.arpa":
+
+  # file { "10.in-addr.arpa":
   #  owner   => "root",
   #  group   => "named",
   #  mode    => 640,
@@ -102,5 +92,4 @@ class bind (
   #      notify => Service["named"]
   #    }
   #  }
-  
 }

@@ -4,7 +4,7 @@
 #    domain_name => $::domainname,
 #    fqdn        => $::fqdn,
 #    ip_address  => $::ipaddress,
-#    zone        => $::ec2_placement_availability_zone
+#    zone        => $::ec2_placement_availability_zone,
 #    provider    => "aws",
 #  }
 
