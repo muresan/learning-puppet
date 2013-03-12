@@ -2,17 +2,11 @@
 
 
 class test_class {
-
     file { "/tmp/testfile":
-
        ensure => present,
-
        mode   => 644,
-
        owner  => root,
-
        group  => root
-
     }
 
 file {'/tmp/test1':
@@ -62,9 +56,7 @@ class dns::host {
 class dns::ips {
 Host_entry <<| |>> { notify => Service["named"] }
      }
-
   }
-
 }
 
 class bind {
