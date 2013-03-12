@@ -17,7 +17,7 @@ class bind (
   $domain = "tinyco.com"
 ) {
   include concat::setup
-  
+
   $utime_serial = inline_template("<%= Time.now.to_i %>")
 
   $bind_package = $::operatingsystem ? {
@@ -83,6 +83,12 @@ class bind (
     target  => "${chroot}/var/named/10.in-addr.arpa",
     order   => '01',
     content => ";; This file managed by Puppet\n",
+  }
+
+  concat::fragment { "soa.10.in-addr.arpa":
+    target  => "${chroot}/var/named/10.in-addr.arpa",
+    order   => '09',
+    content => "\$ORIGIN in-addr.arpa.\n",
   }
 
   concat::fragment { "soa.10.in-addr.arpa":
