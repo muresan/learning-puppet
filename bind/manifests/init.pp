@@ -10,7 +10,12 @@
 #
 # Sample Usage:
 #
-class bind ($version = "installed", $start_bind = true, $chroot = "/var/named/chroot", $domain = "tinyco.com",) {
+class bind (
+  $version = "installed",
+  $start_bind = true,
+  $chroot = "/var/named/chroot",
+  $domain = "tinyco.com"
+) {
   $utime_serial = inline_template("<%= Time.now.to_i %>")
 
   $bind_package = $::operatingsystem ? {
