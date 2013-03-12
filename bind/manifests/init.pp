@@ -13,7 +13,6 @@
 class bind (
   $version     = "installed",
   $start_bind  = true,
-  $chroot      = "/var/named/chroot",
   $domain_name = "tinyco.com"
 ) {
   include concat::setup
@@ -38,7 +37,7 @@ class bind (
 
   service { $bind_service:
     ensure    => running,
-    subscribe => [File["named.conf"], Concat["${chroot}/var/named/${domain_name}", "${chroot}/var/named/10.in-addr.arpa"],],
+    subscribe => [File["named.conf"], Concat["/var/named/${domain_name}", "/var/named/10.in-addr.arpa"],],
     require   => Package[$bind_package],
   }
 
@@ -51,7 +50,7 @@ class bind (
     require => Package[$bind_package],
   }
 
-  concat { "${chroot}/var/named/${domain_name}":
+  concat { "/var/named/${domain_name}":
     owner   => root,
     group   => named,
     mode    => '0644',
@@ -59,7 +58,7 @@ class bind (
     notify  => Service[$bind_service],
   }
 
-  concat { "${chroot}/var/named/10.in-addr.arpa":
+  concat { "/var/named/10.in-addr.arpa":
     owner   => root,
     group   => named,
     mode    => '0644',
@@ -68,31 +67,31 @@ class bind (
   }
 
   concat::fragment { "header.${domain_name}":
-    target  => "${chroot}/var/named/${domain_name}",
+    target  => "/var/named/${domain_name}",
     order   => 10,
     content => ";; This file managed by Puppet\n",
   }
 
   concat::fragment { "soa.${domain_name}":
-    target  => "${chroot}/var/named/${domain_name}",
+    target  => "/var/named/${domain_name}",
     order   => 20,
     content => template('bind/soa.erb'),
   }
 
   concat::fragment { "header.10.in-addr.arpa":
-    target  => "${chroot}/var/named/10.in-addr.arpa",
+    target  => "var/named/10.in-addr.arpa",
     order   => 10,
     content => ";; This file managed by Puppet\n",
   }
 
     concat::fragment { "soa.10.in-addr.arpa":
-    target  => "${chroot}/var/named/10.in-addr.arpa",
+    target  => "/var/named/10.in-addr.arpa",
     order   => 20,
     content => template('bind/soa.erb'),
   }
 
   concat::fragment { "origin.10.in-addr.arpa":
-    target  => "${chroot}/var/named/10.in-addr.arpa",
+    target  => "/var/named/10.in-addr.arpa",
     order   => 30,
     content => "\$ORIGIN in-addr.arpa.\n",
   }
@@ -103,7 +102,7 @@ class bind (
   #  owner   => root,
   #  group   => named,
   #  mode    => 0640,
-  #  path    => "${chroot}/var/named/${domain_name}",
+  #  path    => "/var/named/${domain_name}",
   #  content => template("puppet:///modules/bind/hostentry.erb"),
   #  require => Package[$bind_package],
   #}
@@ -112,7 +111,7 @@ class bind (
   #  owner   => "root",
   #  group   => "named",
   #  mode    => 640,
-  #  path    => "${chroot}/var/named/10.in-addr.arpa",
+  #  path    => "/var/named/10.in-addr.arpa",
   #  content => template("puppet:///modules/bind/reverseentry.erb")
   #}
 
