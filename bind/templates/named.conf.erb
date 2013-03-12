@@ -34,9 +34,5 @@ include "/etc/named.rfc1912.zones";
 
 include "<%= domain %>.key";
 
-zone "<%= domain %>" IN {
-    type master;
-    file "<%= domain %>.db";
-    allow-update { key <%= domain %> ; } ;
-};
+zone "<%= domain %>" IN { type master; file "<%= domain %>"; allow-update { key <%= domain %>; }; };
 

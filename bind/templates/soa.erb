@@ -1,4 +1,5 @@
-$TTL 1D
+;; begin SOA record
+$TTL 1H
 @		IN	SOA       ns1.<%=domain %>.  hostmaster.<%=domain %>.  (
                                <%=utime_serial %>       ; Serial
                                 8H             ; Refresh
@@ -8,5 +9,4 @@ $TTL 1D
 
 		IN	NS	ns1.<%=domain %>.
 
-
-
+;; end SOA record

@@ -1,11 +1,10 @@
-name    'cata-bind'
+name 'cata-bind'
 version ''
-source ''
+
 author 'cata'
 license ''
+project_page ''
+source ''
 summary ''
 description ''
-project_page ''
-
-## Add dependencies, if any:
-# dependency 'username/name', '>= 1.2.0'
+dependency 'ripienaar/concat', '==0.2.0'

@@ -1,0 +1,28 @@
+{
+  "name": "cata-bind",
+  "author": "cata",
+  "description": "",
+  "license": "",
+  "project_page": "",
+  "source": "",
+  "summary": "",
+  "version": "",
+  "checksums": {
+    "Modulefile": "38e2862e2aa3ddcbc9e33d6b168c75af",
+    "README.markdown": "d3f38583286ca05f1fb1e7f37c613d23",
+    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+    "files/placeholder": "d41d8cd98f00b204e9800998ecf8427e",
+    "manifests/hostentry.pp": "00886ce0f84b182c1c2cbe328f679028",
+    "manifests/init.pp": "35ca3a584f33be7962b7b0610bf999f6",
+    "templates/hostentry.erb": "e87e28b8400f14c089d3c209c53668fe",
+    "templates/named.conf.erb": "bba7689809457c1c57a57b40fdb58b1b",
+    "templates/reverseentry.erb": "2f8b9e142e0379870294ddaf792b65fd",
+    "templates/soa.erb": "60bdb451cdf02d877e4ebffed80961fa"
+  },
+  "dependencies": [
+    {
+      "name": "ripienaar/concat",
+      "version_requirement": "\u003d\u003d0.2.0"
+    }
+  ]
+}
