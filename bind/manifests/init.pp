@@ -45,7 +45,7 @@ class bind (
     group   => named,
     mode    => 0640,
     path    => "/etc/named.conf",
-    content => template('puppet:///modules/bind/named.conf.erb'),
+    content => template('bind/named.conf.erb'),
     require => Package[$bind_package],
   }
 
@@ -58,7 +58,7 @@ class bind (
   concat::fragment { "soa.${domain}":
     target  => "${chroot}/var/named/${domain}",
     order   => '10',
-    content => template('puppet:///modules/bind/templates/soa.erb'),
+    content => template('bind/templates/soa.erb'),
   }
 
   concat::fragment { "header.10.in-addr.arpa":
@@ -70,7 +70,7 @@ class bind (
   concat::fragment { "soa.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
     order   => '10',
-    content => template('puppet:///modules/bind/templates/soa.erb'),
+    content => template('bind/templates/soa.erb'),
   }
 
   Bind::Hostentry <<| |>>
