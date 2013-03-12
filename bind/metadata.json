@@ -16,7 +16,7 @@
     "manifests/hostentry.pp": "0db46e70658c5c03373cb49a1ddc51e6",
     "manifests/init.pp": "4d11958f5945361b8c2a6bd740867922",
     "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",
-    "templates/named.conf.erb": "c88494e7610d7467f4832a532443f165",
+    "templates/named.conf.erb": "c2682e8ad48fb76893386f8bd5a646d8",
     "templates/reverseentry.erb": "8cadac4bd5006b2e2129de007089ffde",
     "templates/soa.erb": "415443eb2d91bf35976c8b721da56892"
   },

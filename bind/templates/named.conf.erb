@@ -34,5 +34,6 @@ include "/etc/named.rfc1912.zones";
 
 include "<%= domain_name %>.key";
 
+zone "10.in-addr.arpa" IN { type master; file "10.in-addr.arpa"; allow-update { none; }; };
 zone "<%= domain_name %>" IN { type master; file "<%= domain_name %>"; allow-update { key <%= domain_name %>; }; };
 
