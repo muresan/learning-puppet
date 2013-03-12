@@ -43,10 +43,26 @@ class bind (
   file { "named.conf":
     owner   => root,
     group   => named,
-    mode    => 0640,
+    mode    => '0640',
     path    => "/etc/named.conf",
     content => template('bind/named.conf.erb'),
     require => Package[$bind_package],
+  }
+
+  concat { "${chroot}/var/named/${domain}":
+    owner   => root,
+    group   => named,
+    mode    => '0644',
+    require => Package[$bind_package],
+    notify  => Service[$bind_service],
+  }
+
+  concat { "${chroot}/var/named/10.in-addr.arpa":
+    owner   => root,
+    group   => named,
+    mode    => '0644',
+    require => Package[$bind_package],
+    notify  => Service[$bind_service],
   }
 
   concat::fragment { "header.${domain}":
