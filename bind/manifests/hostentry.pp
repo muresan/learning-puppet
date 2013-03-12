@@ -1,4 +1,4 @@
-#class dns::hostentry {
+#
 #  @@hostentry { "${::fqdn}":
 #    host_name   => $::hostname,
 #    domain_name => $::domainname,
