@@ -8,13 +8,21 @@
   "summary": "",
   "version": "",
   "checksums": {
-    "Modulefile": "391cb36701744ffe9a101e246f72f7ba",
+    "Modulefile": "38e2862e2aa3ddcbc9e33d6b168c75af",
     "README.markdown": "d3f38583286ca05f1fb1e7f37c613d23",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
-    "manifests/init.pp": "7d3b7274a9f25701711ca9d291d60654",
-    "manifests/site.pp": "158ab7c6ecaeb913e5fa9e534c8a87e1",
-    "templates/domain.hosts.erb": "4d8081931180c15059aa672947775fe9",
-    "templates/named.conf.erb": "00e4933d88cdce2ed46cf72a2d6ac82a"
+    "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
+    "manifests/hostentry.pp": "0db46e70658c5c03373cb49a1ddc51e6",
+    "manifests/init.pp": "4d11958f5945361b8c2a6bd740867922",
+    "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",
+    "templates/named.conf.erb": "c2682e8ad48fb76893386f8bd5a646d8",
+    "templates/reverseentry.erb": "8cadac4bd5006b2e2129de007089ffde",
+    "templates/soa.erb": "415443eb2d91bf35976c8b721da56892"
   },
-  "dependencies": []
+  "dependencies": [
+    {
+      "name": "ripienaar/concat",
+      "version_requirement": "\u003d\u003d0.2.0"
+    }
+  ]
 }

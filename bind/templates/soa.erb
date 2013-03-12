@@ -1,13 +1,12 @@
-$TTL 1D
-@		IN	SOA       ns1.<%=domain %>.  hostmaster.<%=domain %>.  (
+;; begin SOA record
+$TTL 1H
+@		IN	SOA       ns1.<%=domain_name %>.  hostmaster.<%=domain_name %>.  (
                                <%=utime_serial %>       ; Serial
                                 8H             ; Refresh
                                 2H             ; Retry
                                 4W             ; Expire
                                 1D )           ; Minimum
 
-		IN	NS	ns1.<%=domain %>.
+		IN	NS	ns1.<%=domain_name %>.
 
-
-<%=ipaddress %>	IN	A	<%=hostname %>
-
+;; end SOA record
