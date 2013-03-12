@@ -11,7 +11,6 @@
     "Modulefile": "38e2862e2aa3ddcbc9e33d6b168c75af",
     "README.markdown": "d3f38583286ca05f1fb1e7f37c613d23",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
-    "files/placeholder": "d41d8cd98f00b204e9800998ecf8427e",
     "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
     "manifests/hostentry.pp": "0db46e70658c5c03373cb49a1ddc51e6",
     "manifests/init.pp": "4d11958f5945361b8c2a6bd740867922",
