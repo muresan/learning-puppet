@@ -74,7 +74,7 @@ class bind (
   concat::fragment { "soa.${domain}":
     target  => "${chroot}/var/named/${domain}",
     order   => '10',
-    content => template('bind/templates/soa.erb'),
+    content => template('bind/soa.erb'),
   }
 
   concat::fragment { "header.10.in-addr.arpa":
@@ -86,7 +86,7 @@ class bind (
   concat::fragment { "soa.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
     order   => '10',
-    content => template('bind/templates/soa.erb'),
+    content => template('bind/soa.erb'),
   }
 
   Bind::Hostentry <<| |>>

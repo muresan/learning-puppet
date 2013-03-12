@@ -1,7 +1,7 @@
 #
 #  @@hostentry { "${::fqdn}":
 #    host_name   => $::hostname,
-#    domain_name => $::domainname,
+#    domain_name => $::domain,
 #    fqdn        => $::fqdn,
 #    ip_address  => $::ipaddress,
 #    zone        => $::ec2_placement_availability_zone,
@@ -15,12 +15,12 @@ define bind::hostentry (
   $ip_address,
   $order  = '20',
   $zone,
-  $provider,
+  $provider
 ) {
   concat::fragment { "${host_name}.${zone}.${provider}.${domain_name}":
     order   => 20,
     target  => "${::chroot}/var/named/${domain}",
-    content => template('puppet:///modules/bind/hostentry.erb'),
+    content => template('bind/hostentry.erb'),
   }
   
   ## added both entries at the same time in $domain zone
@@ -33,6 +33,6 @@ define bind::hostentry (
   concat::fragment { "${host_name}.10.in-addr.arpa":
     order   => 20,
     target  => "${::chroot}/var/named/10.in-addr.arpa",
-    content => template('puppet:///modules/bind/reverseentry.erb'),
+    content => template('bind/reverseentry.erb'),
   }
 }
