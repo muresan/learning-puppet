@@ -16,6 +16,8 @@ class bind (
   $chroot = "/var/named/chroot",
   $domain = "tinyco.com"
 ) {
+  include concat::setup
+  
   $utime_serial = inline_template("<%= Time.now.to_i %>")
 
   $bind_package = $::operatingsystem ? {
