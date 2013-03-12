@@ -22,5 +22,4 @@ define bind::hostentry (
     target  => '/var/named/',
     content => template('puppet:///modules/bind/reverseentry.erb'),
   }
-  
 }
