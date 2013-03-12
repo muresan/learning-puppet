@@ -11,10 +11,10 @@
 # Sample Usage:
 #
 class bind (
-  $version = "installed",
-  $start_bind = true,
-  $chroot = "/var/named/chroot",
-  $domain = "tinyco.com"
+  $version     = "installed",
+  $start_bind  = true,
+  $chroot      = "/var/named/chroot",
+  $domain_name = "tinyco.com"
 ) {
   include concat::setup
 
@@ -38,7 +38,7 @@ class bind (
 
   service { $bind_service:
     ensure    => running,
-    subscribe => [File["named.conf"], Concat["${chroot}/var/named/${domain}", "${chroot}/var/named/10.in-addr.arpa"],],
+    subscribe => [File["named.conf"], Concat["${chroot}/var/named/${domain_name}", "${chroot}/var/named/10.in-addr.arpa"],],
     require   => Package[$bind_package],
   }
 
@@ -51,7 +51,7 @@ class bind (
     require => Package[$bind_package],
   }
 
-  concat { "${chroot}/var/named/${domain}":
+  concat { "${chroot}/var/named/${domain_name}":
     owner   => root,
     group   => named,
     mode    => '0644',
@@ -67,14 +67,14 @@ class bind (
     notify  => Service[$bind_service],
   }
 
-  concat::fragment { "header.${domain}":
-    target  => "${chroot}/var/named/${domain}",
+  concat::fragment { "header.${domain_name}":
+    target  => "${chroot}/var/named/${domain_name}",
     order   => '01',
     content => ";; This file managed by Puppet\n",
   }
 
-  concat::fragment { "soa.${domain}":
-    target  => "${chroot}/var/named/${domain}",
+  concat::fragment { "soa.${domain_name}":
+    target  => "${chroot}/var/named/${domain_name}",
     order   => '10',
     content => template('bind/soa.erb'),
   }
@@ -85,7 +85,7 @@ class bind (
     content => ";; This file managed by Puppet\n",
   }
 
-  concat::fragment { "soa.10.in-addr.arpa":
+  concat::fragment { "origin.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
     order   => '09',
     content => "\$ORIGIN in-addr.arpa.\n",
@@ -99,11 +99,11 @@ class bind (
 
   Bind::Hostentry <<| |>>
 
-  # file { "$domain":
+  # file { "$domain_name":
   #  owner   => root,
   #  group   => named,
   #  mode    => 0640,
-  #  path    => "${chroot}/var/named/${domain}",
+  #  path    => "${chroot}/var/named/${domain_name}",
   #  content => template("puppet:///modules/bind/hostentry.erb"),
   #  require => Package[$bind_package],
   #}
