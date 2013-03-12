@@ -79,7 +79,7 @@ class bind (
   }
 
   concat::fragment { "header.10.in-addr.arpa":
-    target  => "var/named/10.in-addr.arpa",
+    target  => "/var/named/10.in-addr.arpa",
     order   => 10,
     content => ";; This file managed by Puppet\n",
   }
