@@ -69,31 +69,31 @@ class bind (
 
   concat::fragment { "header.${domain_name}":
     target  => "${chroot}/var/named/${domain_name}",
-    order   => '01',
+    order   => 1,
     content => ";; This file managed by Puppet\n",
   }
 
   concat::fragment { "soa.${domain_name}":
     target  => "${chroot}/var/named/${domain_name}",
-    order   => '10',
+    order   => 10,
     content => template('bind/soa.erb'),
   }
 
   concat::fragment { "header.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
-    order   => '01',
+    order   => 1,
     content => ";; This file managed by Puppet\n",
   }
 
   concat::fragment { "origin.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
-    order   => '09',
+    order   => 9,
     content => "\$ORIGIN in-addr.arpa.\n",
   }
 
   concat::fragment { "soa.10.in-addr.arpa":
     target  => "${chroot}/var/named/10.in-addr.arpa",
-    order   => '10',
+    order   => 10,
     content => template('bind/soa.erb'),
   }
 
