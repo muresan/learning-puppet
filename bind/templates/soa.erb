@@ -7,6 +7,6 @@ $TTL 1H
                                 4W             ; Expire
                                 1D )           ; Minimum
 
-		IN	NS	ns1.<%=name %>.
+		IN	NS	ns1.<%= scope.lookupvar("bind::ns_domain") %>.
 
 ;; end SOA record
