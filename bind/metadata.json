@@ -12,13 +12,13 @@
     "README.markdown": "d3f38583286ca05f1fb1e7f37c613d23",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
-    "manifests/domain.pp": "d544c7f62b384bb148d22f953ef1746c",
+    "manifests/domain.pp": "230927d09b8897acfc3ae5ca89594d1e",
     "manifests/hostentry.pp": "c2619dc5a58bc0799cacbe2f27388dda",
     "manifests/init.pp": "a5ca90b0db05d7420153fde1a7ae8796",
     "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",
     "templates/named.conf.erb": "6043ff3a7fa7d1e5a6956865097e3671",
     "templates/reverseentry.erb": "03f6a05125b6c0bdce0094704b9f6814",
-    "templates/soa.erb": "f30b0e8523bcbce5a84a92fdcd539550",
+    "templates/soa.erb": "55f0ae344e76ce764dce563099b2235b",
     "templates/zone.named.conf.erb": "7689ba239927b2ff433fcbc1d77821fe"
   },
   "dependencies": [

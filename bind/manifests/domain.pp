@@ -14,8 +14,6 @@ define bind::domain (
   $reverse = false 
 ) {
 
-  include bind
-  
   concat { "/var/named/${name}":
     owner   => root,
     group   => named,
