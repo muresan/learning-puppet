@@ -17,8 +17,6 @@ class bind (
 ) {
   include concat::setup
 
-  $utime_serial = inline_template("<%= Time.now.to_i %>")
-
   $bind_package = $::operatingsystem ? {
     "CentOS" => 'bind',
     "RedHat" => 'bind',
