@@ -19,7 +19,7 @@
     "templates/named.conf.erb": "6043ff3a7fa7d1e5a6956865097e3671",
     "templates/reverseentry.erb": "03f6a05125b6c0bdce0094704b9f6814",
     "templates/soa.erb": "55f0ae344e76ce764dce563099b2235b",
-    "templates/zone.named.conf.erb": "7689ba239927b2ff433fcbc1d77821fe"
+    "templates/zone.named.conf.erb": "ab995132bf71aacb2becce15be7e2090"
   },
   "dependencies": [
     {
