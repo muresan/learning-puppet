@@ -25,13 +25,6 @@ define bind::hostentry (
     content => template('bind/hostentry.erb'),
   }
   
-  ## added both entries at the same time in $domain_name zone
-  #concat::fragment { "${host_name}.servers.${domain_name}":
-  #  order   => 20,
-  #  target  => "/var/named/servers.${domain_name}",
-  #  content => template('puppet:///modules/bind/hostentry.erb'),
-  #}
-  
   concat::fragment { "${host_name}.10.in-addr.arpa":
     order   => 90,
     target  => "/var/named/10.in-addr.arpa",
