@@ -37,7 +37,7 @@ class bind (
 
   service { $bind_service:
     ensure    => running,
-    subscribe => File["named.conf"],
+    subscribe => Concat["/etc/named.conf"],
     require   => Package[$bind_package],
   }
 
