@@ -10,7 +10,7 @@
 #
 # Sample Usage:
 #
-class bind::domain (  
+define bind::domain (  
   $reverse = false 
 ) {
 
