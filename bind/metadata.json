@@ -12,12 +12,14 @@
     "README.markdown": "d3f38583286ca05f1fb1e7f37c613d23",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
+    "manifests/domain.pp": "bb66b96ca5ec93cfa21739b93175bb84",
     "manifests/hostentry.pp": "0db46e70658c5c03373cb49a1ddc51e6",
-    "manifests/init.pp": "4d11958f5945361b8c2a6bd740867922",
+    "manifests/init.pp": "643f1b996bd308546abf01a41d84edd3",
     "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",
-    "templates/named.conf.erb": "c2682e8ad48fb76893386f8bd5a646d8",
-    "templates/reverseentry.erb": "8cadac4bd5006b2e2129de007089ffde",
-    "templates/soa.erb": "415443eb2d91bf35976c8b721da56892"
+    "templates/named.conf.erb": "f11a3140c9f80bfb6ffb89800ec40d3f",
+    "templates/reverseentry.erb": "03f6a05125b6c0bdce0094704b9f6814",
+    "templates/soa.erb": "f9bf5d3becb83a000d97fbc38d35cc89",
+    "templates/zone.named.conf.erb": "7689ba239927b2ff433fcbc1d77821fe"
   },
   "dependencies": [
     {
