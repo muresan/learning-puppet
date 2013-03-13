@@ -14,7 +14,7 @@
     "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
     "manifests/domain.pp": "230927d09b8897acfc3ae5ca89594d1e",
     "manifests/hostentry.pp": "c2619dc5a58bc0799cacbe2f27388dda",
-    "manifests/init.pp": "2021d8d01e2ebc06cc6130dcb2e4d571",
+    "manifests/init.pp": "a012e303d446a226b42d49373a366661",
     "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",
     "templates/named.conf.erb": "6043ff3a7fa7d1e5a6956865097e3671",
     "templates/reverseentry.erb": "03f6a05125b6c0bdce0094704b9f6814",
