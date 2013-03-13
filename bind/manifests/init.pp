@@ -13,7 +13,8 @@
 class bind (
   $version     = "installed",
   $start_bind  = true,
-  $ns_domain   = "tinyco.com"
+  $ns_domain   = "tinyco.com",
+  $ip_domain   = "1.2.3.4"
 ) {
   include concat::setup
 

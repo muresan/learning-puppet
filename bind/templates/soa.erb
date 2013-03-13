@@ -1,6 +1,6 @@
 ;; begin SOA record
 $TTL 1H
-@		IN	SOA       ns1.<%=name %>.  hostmaster.<%=name %>.  (
+@		IN	SOA       ns1.<%= scope.lookupvar("bind::ns_domain") %>.  hostmaster.<%= scope.lookupvar("bind::ns_domain") %>.  (
                                <%= scope.lookupvar("bind::utime_serial") %>       ; Serial
                                 8H             ; Refresh
                                 2H             ; Retry
@@ -8,5 +8,6 @@ $TTL 1H
                                 1D )           ; Minimum
 
 		IN	NS	ns1.<%= scope.lookupvar("bind::ns_domain") %>.
+ns1		IN	A	<%= scope.lookupvar("bind::ip_domain") %>
 
 ;; end SOA record
