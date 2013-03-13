@@ -51,6 +51,7 @@ class bind (
 
   concat::fragment { "header.named.conf":
     order   => 10,
+    target  => "/etc/named.conf",
     content => template('bind/named.conf.erb'),
   }
 
