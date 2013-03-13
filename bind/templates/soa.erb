@@ -1,7 +1,7 @@
 ;; begin SOA record
 $TTL 1H
 @		IN	SOA       ns1.<%=name %>.  hostmaster.<%=name %>.  (
-                               <%= bind::utime_serial %>       ; Serial
+                               <%= utime_serial %>       ; Serial
                                 8H             ; Refresh
                                 2H             ; Retry
                                 4W             ; Expire

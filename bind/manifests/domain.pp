@@ -14,8 +14,8 @@ define bind::domain (
   $reverse = false 
 ) {
 
-  $utime_serial = inline_template("<%= Time.now.to_i %>")
-
+  include bind
+  
   concat { "/var/named/${name}":
     owner   => root,
     group   => named,
