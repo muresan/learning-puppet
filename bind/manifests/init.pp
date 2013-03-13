@@ -13,7 +13,7 @@
 class bind (
   $version     = "installed",
   $start_bind  = true,
-  $domain_name = "$::domain"
+  $domain_name = $::domain
 ) {
   include concat::setup
 
@@ -41,15 +41,6 @@ class bind (
     require   => Package[$bind_package],
   }
 
-  #file { "named.conf":
-  #  owner   => root,
-  #  group   => named,
-  #  mode    => '0640',
-  #  path    => "/etc/named.conf",
-  #  content => template('bind/named.conf.erb'),
-  #  require => Package[$bind_package],
-  #}
-  
   concat { "/etc/named.conf":
     owner   => root,
     group   => named,
