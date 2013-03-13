@@ -16,7 +16,7 @@ define bind::domain (
 
   concat { "/var/named/${name}":
     owner   => root,
-    group   => named,
+    group   => $bind::bind_owner,
     mode    => '0644',
     require => Package[$bind::bind_package],
     notify  => Service[$bind::bind_service],

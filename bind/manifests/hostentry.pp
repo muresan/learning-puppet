@@ -1,5 +1,5 @@
 #
-#  @@hostentry { "${::fqdn}":
+#  @@bind::hostentry { "${::fqdn}":
 #    host_name   => $::hostname,
 #    domain_name => $::domain,
 #    fqdn        => $::fqdn,

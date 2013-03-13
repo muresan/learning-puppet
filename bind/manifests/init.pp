@@ -13,8 +13,8 @@
 class bind (
   $version     = "installed",
   $start_bind  = true,
-  $ns_domain   = "tinyco.com",
-  $ip_domain   = "1.2.3.4"
+  $ns_domain   = "example.com",
+  $ip_domain   = $::ipaddress
 ) {
   include concat::setup
 
@@ -33,6 +33,13 @@ class bind (
     "Ubuntu" => 'bind9',
     default  => 'named',
   }
+  
+  $bind_owner = $::operatingsystem ? {
+    "CentOS" => 'named',
+    "RedHat" => 'named',
+    "Ubuntu" => 'bind',
+    default  => 'named',
+  }
 
   package { $bind_package: ensure => $version, }
 
@@ -44,7 +51,7 @@ class bind (
 
   concat { "/etc/named.conf":
     owner   => root,
-    group   => named,
+    group   => $bind_owner,
     mode    => '0644',
     require => Package[$bind_package],
     notify  => Service[$bind_service],
