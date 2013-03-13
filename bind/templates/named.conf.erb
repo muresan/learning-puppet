@@ -7,12 +7,6 @@ options {
     allow-query { any; };
     recursion yes;
 
-    /* Path to ISC DLV key */
-    bindkeys-file "/etc/named.iscdlv.key";
-
-    // set forwarding to the next nearest server (from DHCP response
-    forward only;
-    include "forwarders.conf";
 };
 
 logging {
@@ -27,12 +21,10 @@ include "/etc/rndc.key";
  
 controls {
     inet 127.0.0.1 port 953
-    allow { 127.0.0.1; } keys { "rndc-key"; };
+    allow { 127.0.0.1; } keys { rndckey; };
 };
 
-include "/etc/named.rfc1912.zones";
 
-include "<%= domain_name %>.key";
 
 zone "10.in-addr.arpa" IN { type master; file "10.in-addr.arpa"; allow-update { none; }; };
 zone "<%= domain_name %>" IN { type master; file "<%= domain_name %>"; allow-update { key <%= domain_name %>; }; };
