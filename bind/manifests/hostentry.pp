@@ -4,9 +4,10 @@
 #    domain_name => $::domain,
 #    fqdn        => $::fqdn,
 #    ip_address  => $::ipaddress,
-#    zone        => $::ec2_placement_availability_zone,
-#    provider    => "aws",
+#    zone        => $::ec2_ami_id ? { /^ami-........$/ => $::ec2_placement_availability_zone, /^$/ => "1" },
+#    provider    => $::ec2_ami_id ? { /^ami-........$/ => "aws", /^$/ => "rackspace", },
 #  }
+#
 
 define bind::hostentry (
   $host_name,

@@ -13,7 +13,7 @@
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
     "manifests/domain.pp": "2b3d5cba8265acff983da522af0f79d2",
-    "manifests/hostentry.pp": "43227d7ed5c8cd3a26c7040158c9f125",
+    "manifests/hostentry.pp": "eec440f5382589e98a3ba386c40a3944",
     "manifests/init.pp": "59bc0bec35992bb89862489fe99cabf0",
     "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",
     "templates/named.conf.erb": "6043ff3a7fa7d1e5a6956865097e3671",
