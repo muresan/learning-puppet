@@ -12,7 +12,7 @@
     "README.markdown": "d3f38583286ca05f1fb1e7f37c613d23",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
-    "manifests/domain.pp": "2b3d5cba8265acff983da522af0f79d2",
+    "manifests/domain.pp": "32fa06495990254cf2ee5cd1180813f4",
     "manifests/hostentry.pp": "eec440f5382589e98a3ba386c40a3944",
     "manifests/init.pp": "59bc0bec35992bb89862489fe99cabf0",
     "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",

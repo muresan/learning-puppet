@@ -51,4 +51,3 @@ define bind::domain (
   Bind::Hostentry <<| domain_name == $name |>>
 
 }
-
