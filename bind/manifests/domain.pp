@@ -10,9 +10,7 @@
 #
 # Sample Usage:
 #
-define bind::domain (  
-  $reverse = false 
-) {
+define bind::domain ($reverse = false) {
 
   concat { "/var/named/${name}":
     owner   => root,
@@ -34,18 +32,18 @@ define bind::domain (
     content => template('bind/soa.erb'),
   }
 
-  if ( $reverse == true ){
-	  concat::fragment { "origin.${name}":
-	    target  => "/var/named/${name}",
-	    order   => 30,
-	    content => "\$ORIGIN in-addr.arpa.\n",
-	  }
+  if ($reverse == true) {
+    concat::fragment { "origin.${name}":
+      target  => "/var/named/${name}",
+      order   => 30,
+      content => "\$ORIGIN in-addr.arpa.\n",
+    }
   }
 
   concat::fragment { "named.conf.${name}":
     target  => "/etc/named.conf",
     order   => 20,
-    content => template("bind/zone.named.conf.erb"), 
+    content => template("bind/zone.named.conf.erb"),
   }
 
   Bind::Hostentry <<| domain_name == $name |>>

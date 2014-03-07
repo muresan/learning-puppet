@@ -1,30 +1,31 @@
 {
-  "name": "cata-bind",
   "author": "cata",
-  "description": "",
-  "license": "",
-  "project_page": "",
-  "source": "",
-  "summary": "",
-  "version": "",
   "checksums": {
-    "Modulefile": "38e2862e2aa3ddcbc9e33d6b168c75af",
-    "README.markdown": "d3f38583286ca05f1fb1e7f37c613d23",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
-    "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
-    "manifests/domain.pp": "32fa06495990254cf2ee5cd1180813f4",
-    "manifests/hostentry.pp": "eec440f5382589e98a3ba386c40a3944",
-    "manifests/init.pp": "59bc0bec35992bb89862489fe99cabf0",
-    "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",
-    "templates/named.conf.erb": "6043ff3a7fa7d1e5a6956865097e3671",
     "templates/reverseentry.erb": "759c7ec8fef6cde44d141544282a482f",
+    "templates/named.conf.erb": "6043ff3a7fa7d1e5a6956865097e3671",
+    "Modulefile": "24405b9b275db52be0556514d2f79d77",
+    "README.markdown": "d3f38583286ca05f1fb1e7f37c613d23",
+    "manifests/hostentry.pp": "eec440f5382589e98a3ba386c40a3944",
+    "templates/hostentry.erb": "68569c25ce5a51093a74b5ae04be7e56",
     "templates/soa.erb": "7224c42d3527f2783c4e875aeda8a58e",
+    "manifests/init.pp": "59bc0bec35992bb89862489fe99cabf0",
+    "manifests/domain.pp": "cbe469b872a1dc01912cb75ac16a9590",
+    "lib/facter/reverse_ipaddress.rb": "1a6fe241c41d807b8bc6e3ebd2dc9bd2",
     "templates/zone.named.conf.erb": "ab995132bf71aacb2becce15be7e2090"
   },
   "dependencies": [
     {
       "name": "ripienaar/concat",
-      "version_requirement": "\u003d\u003d0.2.0"
+      "version_requirement": "0.2.0"
     }
-  ]
+  ],
+  "description": "BIND puppet module",
+  "license": "Free",
+  "name": "cata-bind",
+  "project_page": "",
+  "source": "",
+  "summary": "",
+  "types": [],
+  "version": "0.1.0"
 }
